@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>MadAssMaker's Dashboard - Login</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #1e1e1e;
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+    #login-box {
+      background: #333;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #000;
+      text-align: center;
+    }
+    input[type="password"] {
+      padding: 10px;
+      font-size: 1em;
+      border-radius: 5px;
+      border: none;
+      width: 80%;
+    }
+    button {
+      margin-top: 10px;
+      padding: 10px 20px;
+      font-size: 1em;
+      border: none;
+      border-radius: 5px;
+      background-color: #ffd369;
+      color: #1e1e1e;
+      cursor: pointer;
+    }
+    .hidden {
+      display: none;
+    }
+    iframe {
+      width: 100%;
+      height: 90vh;
+      border: none;
+    }
+  </style>
+</head>
+<body>
+  <div id="login-box">
+    <h2>Enter Password</h2>
+    <input type="password" id="password" placeholder="Password">
+    <br>
+    <button onclick="checkPassword()">Login</button>
+  </div>
+
+  <div id="dashboard" class="hidden">
+    <iframe src="dashboard_content.html"></iframe>
+  </div>
+
+  <script>
+    function checkPassword() {
+      const entered = document.getElementById('password').value;
+      const correct = "jove4PiVBBfCSkr";
+      if (entered === correct) {
+        document.getElementById('login-box').classList.add('hidden');
+        document.getElementById('dashboard').classList.remove('hidden');
+      } else {
+        alert("Wrong password, mate.");
+      }
+    }
+  </script>
+</body>
+</html>
