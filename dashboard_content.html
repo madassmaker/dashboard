@@ -4,15 +4,69 @@
   <meta charset="UTF-8" />
   <title>MadAssMaker's Dashboard</title>
   <style>
-    body { font-family: Arial, sans-serif; background-color: #121212; color: #eee; margin: 0; padding: 20px; }
-    h1 { color: #ffd369; }
-    .panel { background-color: #1e1e1e; border: 2px solid #ffd369; border-radius: 10px; padding: 15px; margin-bottom: 20px; }
-    .panel h2 { margin-top: 0; color: #ffd369; }
-    iframe { width: 100%; height: 300px; border: none; }
-    .knob-button { display: inline-block; width: 70px; height: 70px; background: #444; border-radius: 50%; text-align: center; line-height: 70px; color: white; font-weight: bold; margin: 10px; transition: transform 0.2s ease; cursor: pointer; }
-    .knob-button:hover { transform: rotate(20deg) scale(1.1); background-color: #666; }
-    .dark-toggle { padding: 10px; margin: 10px 0; background: #ffd369; color: #121212; font-weight: bold; cursor: pointer; border: none; border-radius: 5px; }
-    textarea, input[type="text"] { width: 100%; padding: 10px; margin-top: 10px; border-radius: 5px; border: none; background-color: #333; color: #fff; }
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #121212;
+      color: #eee;
+      margin: 0;
+      padding: 20px;
+    }
+    h1 {
+      color: #ffd369;
+    }
+    .panel {
+      background-color: #1e1e1e;
+      border: 2px solid #ffd369;
+      border-radius: 10px;
+      padding: 15px;
+      margin-bottom: 20px;
+    }
+    .panel h2 {
+      margin-top: 0;
+      color: #ffd369;
+    }
+    iframe {
+      width: 100%;
+      height: 300px;
+      border: none;
+    }
+    .knob-button {
+      display: inline-block;
+      width: 70px;
+      height: 70px;
+      background: #444;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 70px;
+      color: white;
+      font-weight: bold;
+      margin: 10px;
+      transition: transform 0.2s ease;
+      cursor: pointer;
+    }
+    .knob-button:hover {
+      transform: rotate(20deg) scale(1.1);
+      background-color: #666;
+    }
+    .dark-toggle {
+      padding: 10px;
+      margin: 10px 0;
+      background: #ffd369;
+      color: #121212;
+      font-weight: bold;
+      cursor: pointer;
+      border: none;
+      border-radius: 5px;
+    }
+    textarea, input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      margin-top: 10px;
+      border-radius: 5px;
+      border: none;
+      background-color: #333;
+      color: #fff;
+    }
   </style>
 </head>
 <body>
@@ -22,10 +76,15 @@
 
 <div class="panel">
   <h2>🎛️ Guitar Tools</h2>
-  <div class="knob-button" onclick="playSound('click')">Tuner</div>
-  <div class="knob-button" onclick="playSound('click')">Tabs</div>
-  <div class="knob-button" onclick="playSound('click')">Backings</div>
+  <div class="knob-button" onclick="playSound()">Tuner</div>
+  <div class="knob-button" onclick="playSound()">Tabs</div>
+  <div class="knob-button" onclick="playSound()">Backings</div>
   <iframe src="https://www.fender.com/play/tuner/"></iframe>
+</div>
+
+<div class="panel">
+  <h2>📝 To-Do List</h2>
+  <textarea id="todo" rows="5" placeholder="Track your tasks here..."></textarea>
 </div>
 
 <div class="panel">
@@ -40,7 +99,7 @@
 </div>
 
 <div class="panel">
-  <h2>🗂️ File Links</h2>
+  <h2>📁 File Links</h2>
   <ul>
     <li><a href="file:///C:/Users/YourName/Documents/Plans/guitar1.pdf" target="_blank">Guitar Plan PDF</a></li>
     <li><a href="file:///C:/Users/YourName/Documents/Drawings/shop-layout.png" target="_blank">Workshop Layout</a></li>
@@ -48,32 +107,52 @@
 </div>
 
 <div class="panel">
+  <h2>🎼 Chord Tools, Metronome, Backing Tracks</h2>
+  <iframe src="https://www.chordchord.com/" title="Chord Tool"></iframe>
+  <iframe src="https://www.onlinemetronome.com/" title="Metronome"></iframe>
+</div>
+
+<div class="panel">
+  <h2>🧮 Fretboard Calculator</h2>
+  <iframe src="https://www.stewmac.com/FretCalculator" title="Fret Calculator"></iframe>
+</div>
+
+<div class="panel">
+  <h2>📦 Suppliers & Tools</h2>
+  <ul>
+    <li><a href="https://tonetechluthiersupplies.co.uk/" target="_blank">Tonetech</a></li>
+    <li><a href="https://www.stewmac.com/" target="_blank">StewMac</a></li>
+    <li><a href="https://www.lmii.com/" target="_blank">Luthiers Mercantile</a></li>
+  </ul>
+</div>
+
+<div class="panel">
   <h2>⏱️ Workshop Timer</h2>
-  <iframe src="https://www.online-stopwatch.com/embed/"></iframe>
+  <iframe src="https://www.online-stopwatch.com/embed/" title="Workshop Timer"></iframe>
 </div>
 
 <div class="panel">
   <h2>📐 Unit Converter</h2>
-  <iframe src="https://www.unitconverters.net/" height="400"></iframe>
+  <iframe src="https://www.unitconverters.net/" title="Unit Converter"></iframe>
 </div>
 
 <div class="panel">
-  <h2>🌦️ Weather</h2>
-  <iframe src="https://forecast7.com/en/51d51n0d13/london/"></iframe>
+  <h2>🌦️ Weather Widget</h2>
+  <iframe src="https://forecast7.com/en/51d51n0d13/london/" title="Weather"></iframe>
 </div>
 
 <div class="panel">
   <h2>📆 Calendar</h2>
-  <iframe src="https://calendar.google.com/calendar/embed?src=yourcalendar%40gmail.com&ctz=Europe%2FLondon"></iframe>
+  <iframe src="https://calendar.google.com/calendar/embed?src=yourcalendar%40gmail.com&ctz=Europe%2FLondon" title="Google Calendar"></iframe>
 </div>
 
 <div class="panel">
   <h2>📢 RSS Feeds</h2>
-  <iframe src="https://rss.app/embed/v1/wall/lGO0Uuuw1OpU6hzf" height="300"></iframe>
+  <iframe src="https://rss.app/embed/v1/wall/lGO0Uuuw1OpU6hzf" height="300" title="RSS Feed"></iframe>
 </div>
 
 <div class="panel">
-  <h2>🔍 Quick Search</h2>
+  <h2>🌍 Quick Search</h2>
   <input type="text" id="search" placeholder="Type and press Enter to search Google..." onkeypress="handleSearch(event)">
 </div>
 
@@ -90,14 +169,17 @@
       body.style.color = 'black';
     }
   }
-  function playSound(id) {
+
+  function playSound() {
     document.getElementById("click-sound").play();
   }
+
   function copyClipboard() {
     const text = document.getElementById("clipboard").value;
     navigator.clipboard.writeText(text);
     alert("Copied!");
   }
+
   function handleSearch(event) {
     if (event.key === "Enter") {
       const query = document.getElementById("search").value;
