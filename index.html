@@ -50,6 +50,7 @@
   </style>
 </head>
 <body>
+
   <div id="login-box">
     <h2>Enter Password</h2>
     <input type="password" id="password" placeholder="Password">
@@ -57,21 +58,3 @@
     <button onclick="checkPassword()">Login</button>
   </div>
 
-  <div id="dashboard" class="hidden">
-    <iframe src="dashboard_content.html"></iframe>
-  </div>
-
-  <script>
-    function checkPassword() {
-      const entered = document.getElementById('password').value;
-      const correct = "jove4PiVBBfCSkr";
-      if (entered === correct) {
-        document.getElementById('login-box').classList.add('hidden');
-        document.getElementById('dashboard').classList.remove('hidden');
-      } else {
-        alert("Wrong password, mate.");
-      }
-    }
-  </script>
-</body>
-</html>
